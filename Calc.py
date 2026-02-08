@@ -5,7 +5,7 @@ except:
     exit(1)
 
 from tkinter import messagebox
-
+# Пасхалка для Джанэллы, чтобы сам хотя бы чёт писал, а не копипастил с гптшки
 root = tk.Tk()
 
 def click_button(value):
