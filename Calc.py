@@ -1,5 +1,15 @@
-import tkinter as tk
+try:
+    import tkinter as tk
+except:
+    print("Ошибка", "Tkinter не установлен!\nУстановите его:\n- Ubuntu/Debian: sudo apt install python3-tk\n- Windows: переустановите Python с галочкой 'tcl/tk'\n- macOS: brew install python-tk")
+    exit(1)
+
 from tkinter import messagebox
+try:
+    root = tk.Tk()
+except tk.TclError:
+    messagebox.showerror("Ошибка", "Tkinter не установлен!\nУстановите его:\n- Ubuntu/Debian: sudo apt install python3-tk\n- Windows: переустановите Python с галочкой 'tcl/tk'\n- macOS: brew install python-tk")
+    exit(1)
 
 def click_button(value):
     current = entry.get()
@@ -24,11 +34,6 @@ def calculate():
         clear()
 
 # Создание главного окна
-try:
-    root = tk.Tk()
-except tk.TclError:
-    messagebox.showerror("Ошибка", "Tkinter не установлен!\nУстановите его:\n- Ubuntu/Debian: sudo apt install python3-tk\n- Windows: переустановите Python с галочкой 'tcl/tk'\n- macOS: brew install python-tk")
-    exit(1)
 
 root.title("Fox comp")
 root.geometry("300x420")
